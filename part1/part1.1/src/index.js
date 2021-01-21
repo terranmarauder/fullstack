@@ -30,18 +30,18 @@ const App = () => {
 
   return (
     <div>
-      <Header name={course}  />
+      <Header name={course} />
       <p>
-        <Content part={part1}  />
-        <Total num={exercises1}  />
+        <Content part={part1} />
+        <Total num={exercises1} />
       </p>
       <p>
-        <Content part={part2}  /> 
-        <Total num={exercises2}  />
+        <Content part={part2} /> 
+        <Total num={exercises2} />
       </p>
       <p>
-        <Content part={part3}  /> 
-        <Total num={exercises3}  />
+        <Content part={part3} /> 
+        <Total num={exercises3} />
       </p>
     </div>
   )
