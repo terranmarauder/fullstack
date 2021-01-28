@@ -9,45 +9,43 @@ const Header = (props) => {
 
 const Content = (props) => {
   return (
-    <>{props.part}</>
+    <>
+    <p>
+      {props.part1} {props.exercise1}
+    </p>
+    <p>
+      {props.part2} {props.exercise2}
+    </p>
+    <p>
+      {props.part3} {props.exercise3}
+    </p>
+    </>
   )
 }
 
 const Total = (props) => {
   return (
-    <> {props.num}</>
+    <p>Number of exercises {props.exercise1 + props.exercise2 + props.exercise3}</p>
   )
 }
 
 const App = () => {
   const course = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
-  const exercises1 = 10
+  const exercise1 = 10
   const part2 = 'Using props to pass data'
-  const exercises2 = 7
+  const exercise2 = 7
   const part3 = 'State of a component'
-  const exercises3 = 14
+  const exercise3 = 14
 
   return (
     <div>
       <Header name={course} />
-      <p>
-        <Content part={part1} />
-        <Total num={exercises1} />
-      </p>
-      <p>
-        <Content part={part2} /> 
-        <Total num={exercises2} />
-      </p>
-      <p>
-        <Content part={part3} /> 
-        <Total num={exercises3} />
-      </p>
-      <p>Number of exercises 
-      <Total num={exercises1 + exercises2 + exercises3} />
-      </p>
+      <Content part1={part1} part2={part2} part3={part3} exercise1={exercise1} exercise2={exercise2} exercise3={exercise3} />   
+
+      <Total exercise1={exercise1} exercise2={exercise2} exercise3={exercise3} /> 
     </div>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root')) 
