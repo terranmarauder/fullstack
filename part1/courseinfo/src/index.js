@@ -1,10 +1,46 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+const Header = (props) => {
+  return <h1>{props.course}</h1>
+}
+
+const Content = (props) => {
+  return (
+    <>
+      <Part parts={props.parts[0]} />
+      <Part parts={props.parts[1]} />
+      <Part parts={props.parts[2]} />
+    </>
+  )
+}
+
+const Part = (props) => {
+  return (
+    <>
+    <p>
+      {props.parts.name} {props.parts.exercises}
+      </p>
+    </>
+  )
+}
+
+
+const Total = (props) => {
+  return (
+    <>
+      <p>
+         {props.total}
+      </p>
+    </>
+  )
+}
+
+
 
 
 const App = () => {
-  // const course = 'Half Stack application development'
+  const course = 'Half Stack application development'
   const parts = [
     {
       name: 'Fundamentals of React',
@@ -20,25 +56,12 @@ const App = () => {
     }
   ]
 
- const allparts = parts.map (value => parts)
- let { name, exercises } = parts();
- 
- 
- console.log(allparts)
-
-  //some kind of object destructuring???
- //let { name, exercises } = parts();
-
-
-
- //console.log(parts.name)
-
-
   return (
     <div>
-        
-       
-      
+      <Header course={course} />
+      <Content parts={parts} />
+      <Total total = {parts[0].exercises +parts[1].exercises + parts[2].exercises} />
+    
     </div>
   )
 }
