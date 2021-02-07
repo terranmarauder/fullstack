@@ -1,20 +1,34 @@
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-const Hello = (props) => {
-  const bornYear = () => {
-    const yearNow = new Date().getFullYear()
-    return yearNow - props.age
-  }
+/// consts ///
 
+
+
+
+/// MAIN APP ///
 const App = () => {
-  const name = 'Peter'
-  const age = 10
+  // save clicks of each button to its own state
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
 
   return (
     <div>
-      <h1>Greetings</h1>
-      <Hello name="Maya" age={26 + 10} />
-      <Hello name={name} age={age} />
+      code here
     </div>
   )
 }
+
+ReactDOM.render(<App />, 
+  document.getElementById('root')
+)
+
+
+
+/// render in DOM ///
+
+ReactDOM.render(
+  <App />, 
+  document.getElementById('root')
+)
